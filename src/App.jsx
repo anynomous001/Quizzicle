@@ -1,8 +1,10 @@
 import './App.css'
 import React from 'react'
 import Questions from './Questions'
+/*import { answersContext } from './Questions'*/
 
 function App() {
+  /*const { answersHtml } = React.useContext(answersContext)*/
   const [start, setStart] = React.useState(false)
   const [questions, setQuestions] = React.useState([])
 
@@ -12,9 +14,8 @@ function App() {
       .then(data => {
         setQuestions(data.results)
       })
-
     setStart((prevStart) => !prevStart);
-
+    console.log('clicked')
   }
 
 
@@ -26,9 +27,11 @@ function App() {
           <h4>Some description if needed</h4>
           <button className='start-btn' onClick={click}>Start Quiz</button>
         </div>
-        <div className='quiz-setup'>
+        {start ? <div className='quiz-setup'>
           <Questions questions={questions} />
-        </div>
+        </div> : null}
+
+
       </div>
 
     </div>

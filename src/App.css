@@ -69,12 +69,22 @@
 .start-btn {
   background-color: #4D5B9E;
   margin-top: 1em;
-  color: aliceblue;
+  color: rgba(240, 248, 255, 0.904);
   border: none;
   border-radius: .7em;
   width: 10em;
   font-size: 1.5rem;
   padding: .6em 1em;
+  transition: background-color 0.3s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.start-btn:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.start-btn:active {
+  transform: scale(0.92);
 }
 
 .quiz-setup {
@@ -85,13 +95,13 @@
 
 .quiz-div {
   height: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+
 }
 
-.answer_span {}
+
 
 hr {
   border: 0.01px solid rgba(101, 109, 109, 0.315);
@@ -101,18 +111,25 @@ hr {
 .answer_span {
   font-family: 'Roboto', sans-serif;
   font-size: 0.8rem;
-  border: 1px solid #4D5B9E;
+  border: 1.5px solid #293264;
   background-color: transparent;
   border-radius: 1em;
-  padding: 0.5em 0.6em;
+  padding: 0.7em;
   text-align: center;
   color: #293264;
   min-width: 5em;
+  transition: background-color 0.3s ease-in-out, transform 0.1s ease-in-out;
 }
 
 .answer_span:hover {
-  background: #D6DBF5;
+  background: #293264;
+  color: aliceblue;
   cursor: pointer;
+  transform: scale(1.05);
+}
+
+.answer_span:active {
+  transform: scale(0.95);
 }
 
 .quizes {
@@ -128,4 +145,18 @@ hr {
 
 .select {
   background-color: #D6DBF5;
+}
+
+.check-btn {
+  background: #293264;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
+  border: 1.5px solid #293264;
+  border-radius: 1em;
+  padding: 1em;
+  align-self: center;
+  text-align: center;
+  color: aliceblue;
+  min-width: 9em;
+  margin: 2em;
 }

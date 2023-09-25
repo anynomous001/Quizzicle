@@ -16,8 +16,9 @@ const Questions = ({ questions }) => {
     3: {category: 'Sports', type: 'multiple', difficulty: 'medium', question: 'What is the name of the AHL affiliate of the Toronto Maple Leafs?', correct_answer: 'Toronto Marlies', …}
     4: {category: 'Sports', type: 'multiple', difficulty: 'medium', question: 'Which of these countries&#039; national teams qualified for the 2018 FIFA World Cup in Russia?', correct_answer: 'Tunisia', …}
     length: 5[[Prototype]]: Array(0) */
-
     const quiz_ques = questions.map((item) => {
+
+        /* const answersContext = React.createContext(answersHtml)*/
 
         const inCorrectAnswers = item.incorrect_answers;
         const correctAnswer = item.correct_answer;
@@ -34,8 +35,8 @@ const Questions = ({ questions }) => {
 
         function handleSelect(e) {
             e.target.classList.add('select')
-            console.log(e.target.classList)
         }
+
 
 
         const suffledArray = shuffleArray(answersArray)
@@ -46,7 +47,6 @@ const Questions = ({ questions }) => {
                 <button key={index} className='answer_span' onClick={(e) => handleSelect(e)}>{item}</button>
             );
         });
-
 
         return (
             <div className='quizes'>
@@ -60,8 +60,10 @@ const Questions = ({ questions }) => {
     })
 
     return (
-        <div className='quiz-div'>{quiz_ques}</div>
+        <div className='quiz-div'>
+            {quiz_ques}
+            <button className='check-btn'>Check Answer</button>
+        </div>
     )
 }
-
 export default Questions
